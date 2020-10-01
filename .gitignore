@@ -1,0 +1,7 @@
+# Ignore folders
+node_modules/
+deprecated/
+dist/
+
+# Ignore files
+**/*.DS_Store
