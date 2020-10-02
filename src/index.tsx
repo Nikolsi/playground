@@ -1,5 +1,5 @@
 import * as ReactDOM from 'react-dom'
-import { Playground } from './Playground'
+import { Playground } from './components/Playground'
 
 // import styles
 import '../assets/styles/main.scss'

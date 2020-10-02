@@ -1,5 +1,6 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MonacoWebpackPlugin = require('monaco-editor-webpack-plugin')
 
 module.exports = {
     entry: './src/index.tsx',
@@ -11,10 +12,15 @@ module.exports = {
                 use: 'ts-loader',
                 exclude: /node_modules/
             },
-            // load css
+            // load css | sass | scss
             {
-                test: /\.scss$/,
+                test: /\.(sa|sc|c)ss$/,
                 loader: ['style-loader', 'css-loader', 'sass-loader']
+            },
+            // load ttf files (for monaco-editor)
+            {
+                test: /\.ttf$/,
+                use: ['file-loader']
             }
         ]
     },
@@ -29,6 +35,7 @@ module.exports = {
             title: 'Live-Coding Playground',
             favicon: './assets/images/favicon.ico',
             template: './src/index.html'
-        })
+        }),
+        new MonacoWebpackPlugin()
     ]
 }
