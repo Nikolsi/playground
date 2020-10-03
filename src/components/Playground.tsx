@@ -1,10 +1,15 @@
 import * as React from 'react'
+import { SplitView } from './workspace/SplitView'
 import { Editor } from './workspace/editor/Editor'
+import { Preview } from './workspace/Preview'
 
-export const Playground = (): JSX.Element => {
+export const Playground = () => {
     return (
         <div id='playground-container' className='wrapper' style={{ backgroundColor: 'yellow' }}>
-            <Editor />
+            <SplitView>
+                <Editor />
+                <Preview />
+            </SplitView>
         </div>
     )
 }

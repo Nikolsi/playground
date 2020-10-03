@@ -1,21 +1,32 @@
 import React from 'react'
 import { editor } from 'monaco-editor'
+import { ResizeComponentHandler } from './ResizeObserver'
 
 export type MonacoStandaloneCodeEditor = editor.IStandaloneCodeEditor
 
-export const Editor = (): JSX.Element => {
+export const Editor = () => {
     const [rendered, setRendered] = React.useState(false)
     const containerRef = React.useRef<HTMLDivElement>(null)
     const editorRef = React.useRef<MonacoStandaloneCodeEditor>()
+
     React.useEffect(() => {
         const isRendered = !!containerRef.current
         setRendered(isRendered)
     }, [])
+
     React.useEffect(() => {
         if (rendered) {
-            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
             editorRef.current = editor.create(containerRef.current!)
         }
     }, [rendered])
-    return <div ref={containerRef} id='editor-container' className='editor' />
+
+    const onEditorResizeCallback = React.useCallback(() => {
+        editorRef.current!.layout()
+    }, [rendered])
+
+    return (
+        <div ref={containerRef} id='editor-container' className='editor'>
+            {rendered && <ResizeComponentHandler target={containerRef.current!} onResize={onEditorResizeCallback} />}
+        </div>
+    )
 }

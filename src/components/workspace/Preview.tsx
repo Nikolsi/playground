@@ -1,5 +1,5 @@
 import React from 'react'
 
-export const Preview = (): JSX.Element => {
+export const Preview = () => {
     return <iframe id='preview' />
 }
