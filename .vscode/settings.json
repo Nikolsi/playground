@@ -1,24 +1,9 @@
 {
-    "[*]": {
-        "editor.formatOnSave": true
-    },
-    "[json]": {
-        "editor.formatOnSave": false
-    },
-    "tslint.ignoreDefinitionFiles": true,
-    "prettier.configPath": ".prettierrc",
-    "[typescript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "[typescriptreact]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "editor.formatOnSave": true
-    },
-    "editor.formatOnSave": true,
-    "typescript.preferences.quoteStyle": "single",
-    "typescript.preferences.importModuleSpecifier": "non-relative",
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "cSpell.words": [],
-    "eslint.validate": ["javscript", "javascriptreact", "typescript", "typescriptreact"]
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "eslint.validate": ["javscript", "javascriptreact", "typescript", "typescriptreact"],
+  "cSpell.words": []
 }

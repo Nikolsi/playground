@@ -1,0 +1,9 @@
+{
+  "recommendations": [
+    "msjsdiag.debugger-for-chrome",
+    "esbenp.prettier-vscode",
+    "dbaeumer.vscode-eslint",
+    "streetsidesoftware.code-spell-checker",
+    "eamodio.gitlens"
+  ]
+}
