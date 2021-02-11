@@ -4,7 +4,12 @@
   "description": "Live Coding Tool.",
   "scripts": {
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build:dev": "rm -rf dist && webpack --mode development",
+    "build:prod": "rm -rf dist && webpack --mode production",
+    "lint": "eslint src --quiet",
+    "lint:fix": "eslint src --fix",
+    "test": "echo \"WIP: no test specified\"",
+    "deploy": "npm run build:prod && gh-pages -d dist"
   },
   "repository": {
     "type": "git",
